@@ -1,5 +1,4 @@
 const Sequelize = require('sequelize');
-const conf = require('./conf');
 
 // Create a database connection
 const sequelize = new Sequelize(process.env.CLEARDB_DATABASE_URL);

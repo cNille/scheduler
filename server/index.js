@@ -3,7 +3,6 @@ const express = require('express'),
   path = require('path'),
   cors = require('cors'),
   bodyParser = require('body-parser'),
-  conf = require('./conf'),
   GoogleStrategy = require('passport-google-oauth20').Strategy,
   google = require('googleapis'),
   database = require('./database'),
@@ -12,6 +11,8 @@ const express = require('express'),
 
 sequelize = database.sequelize;
 User = database.User;
+
+const  conf = {};
 
 // Passport, for persistent logins with session. Then serialize and deserialize
 // is needed.
