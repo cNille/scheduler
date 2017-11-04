@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const conf = require('./conf');
 
 // Create a database connection
-const sequelize = new Sequelize('mysql://bfcb84de3b14aa:e91168ac@us-cdbr-iron-east-05.cleardb.net/heroku_e67ec331fa603a9?reconnect=true');
+const sequelize = new Sequelize(process.env.CLEARDB_DATABASE_URL);
 
 // Test connection to the database
 sequelize
