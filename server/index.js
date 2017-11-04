@@ -12,7 +12,12 @@ const express = require('express'),
 sequelize = database.sequelize;
 User = database.User;
 
-const  conf = {};
+const conf = process.env.ENV === 'prod' ? { google: {
+      client_id: process.env.CLIENT_ID,
+      client_secret: process.env.CLIENT_SECRET,
+      callback_url: process.env.GCALLBACK_URL,
+    }
+  } : require('./conf')
 
 // Passport, for persistent logins with session. Then serialize and deserialize
 // is needed.
@@ -43,9 +48,9 @@ function generate_token(length){
 // A strategy requires a `verify` function, which accepts in this case
 // accessToken, refreshToken and google profile.
 passport.use(new GoogleStrategy({
-    clientID: process.env.CLIENT_ID || conf.google.client_id,
-    clientSecret: process.env.CLIENT_SECRET || conf.google.client_secret,
-    callbackURL: process.env.GCALLBACK_URL || conf.google.callback_url,
+    clientID: conf.google.client_id,
+    clientSecret: conf.google.client_secret,
+    callbackURL: conf.google.callback_url,
   },
   function(accessToken, refreshToken, profile, done) {
     // Find user to googleId

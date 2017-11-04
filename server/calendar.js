@@ -1,7 +1,6 @@
 const google = require('googleapis');
 const calendar = google.calendar('v3');
 const OAuth2 = google.auth.OAuth2;
-const conf = require('./conf');
 const database = require('./database');
 
 const sequelize = database.sequelize;
@@ -9,11 +8,22 @@ const User = database.User;
 const Calendar = database.Calendar;
 const Timeblock = database.Timeblock;
 
+const conf = process.env.ENV !== 'prod' ? 
+  require('./conf') :
+  {
+    google: {
+      client_id: process.env.CLIENT_ID,
+      client_secret: process.env.CLIENT_SECRET,
+      callback_url: process.env.GCALLBACK_URL,
+    }
+  } 
+
+
 function createAuth(user){
   const oauth2Client = new OAuth2(
     conf.google.client_id,
     conf.google.client_secret,
-    conf.google.callback_url_calendar
+    conf.google.callback_url
   );
   oauth2Client.setCredentials({
     access_token: user.accessToken,

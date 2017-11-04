@@ -1,7 +1,18 @@
 const Sequelize = require('sequelize');
 
+const conf = process.env.ENV !== 'prod' ? 
+  require('./conf') :
+  {
+    db: process.env.CLEARDB_DATABASE_URL,
+    google: {
+      client_id: process.env.CLIENT_ID,
+      client_secret: process.env.CLIENT_SECRET,
+      callback_url: process.env.GCALLBACK_URL,
+    }
+  } 
+
 // Create a database connection
-const sequelize = new Sequelize(process.env.CLEARDB_DATABASE_URL);
+const sequelize = new Sequelize(conf.db);
 
 // Test connection to the database
 sequelize
