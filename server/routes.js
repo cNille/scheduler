@@ -169,7 +169,7 @@ function setRoutes(router, passport){
   // Callback from google auth after login.
   router.get(
     '/auth/google/callback', 
-    passport.authenticate('google', { failureRedirect: '/login' }),
+    passport.authenticate('google', { failureRedirect: '/' }),
     function(req, res) {
       var token = '';
       if(req.user){

@@ -64,10 +64,11 @@ passport.use(new GoogleStrategy({
           user.firstName = profile.name.givenName;
           user.lastName = profile.name.familyName;
           user.email = profile.emails[0].value;
-          user.save().then(() => console.log('Save successfull'));
-
-          // Return user
-          done(null, user);
+          user.save().then(() => {
+            console.log('Save successfull')
+            // Return user
+            done(null, user);
+          });
         }
       );
   }
