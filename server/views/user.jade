@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    title= Scheduler
+  body(style='width: 500px; display: block; margin: auto;')
+    h1 Scheduler User page
+
+    if reqUser
+      p You are logged in as: #{reqUser.firstName} #{reqUser.lastName}
+      a(href="/api/v1/logout")
+        button Logout
+    hr
+    h2 User: #{user.firstName} #{user.lastName} 
+    a(href="/api/v1/u/" + user.id + "?synk=true")
+      button Synk Calendar
+
+    each timeblock, i in timeblocks
+
+      p #{timeblock.start} - #{timeblock.end}
+
+    

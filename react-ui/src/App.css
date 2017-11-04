@@ -1,0 +1,50 @@
+body {
+  background-color: #eee;
+  color: #373a47;
+}
+
+.Body {
+  padding: 0px 50px;
+  padding-bottom: 250px;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 150px;
+}
+.App-logo:hover {
+
+}
+
+.App-header {
+  height: 250px;
+  padding: 20px;
+}
+
+.App-title {
+  font-size: 3em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.fa.calheader{
+  font-size: 110px;
+  margin-top: 40px;
+}
+
+
+@import url('./css/UserLogin.css');
+@import url('./css/BurgerMenu.css');
+@import url('./css/Schedule.css');
+@import url('./css/buttons.css');
+

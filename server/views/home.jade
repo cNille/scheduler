@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    title= Scheduler
+  body(style='width: 500px; display: block; margin: auto;')
+    h1 Scheduler Home page
+
+    p Hello #{user.firstName}
+    a(href="/api/v1/logout")
+      button Logout
+    hr
+    a(href="/api/v1/calendars")
+      button View calendars
+    br
+    h2 Users in database
+    p Click to see their timeblocks
+    ul
+      each user, i in users    
+        li
+          a(href='/api/v1/u/' + user.id)
+            span #{user.firstName}
+    

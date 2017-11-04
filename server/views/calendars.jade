@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    title= Scheduler
+  body(style='width: 500px; display: block; margin: auto;')
+    h1 Scheduler Calendars
+
+    p Hello #{user.firstName}
+    a(href="/api/v1/logout")
+      button Logout
+    a(href="/api/v1")
+      button Home
+    hr
+
+    h2 Mina Kalendrar
+    each calendar, index in calendars
+      input(type='radio', value=index,) 
+      span #{calendar.summary}
+      br
+    

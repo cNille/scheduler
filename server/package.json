@@ -1,0 +1,30 @@
+{
+  "name": "scheduler-backend",
+  "version": "1.0.0",
+  "description": "Backend for nilles scheduler",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "google-auth-library": "^0.11.0",
+    "googleapis": "^22.2.0",
+    "morgan": "^1.9.0",
+    "mysql2": "^1.4.2",
+    "nodemon": "^1.12.1",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0",
+    "sequelize": "^4.15.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "scripts": {
+    "start": "./node_modules/nodemon/bin/nodemon.js index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nille",
+  "license": "MIT License"
+}
