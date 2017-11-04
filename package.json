@@ -1,7 +1,7 @@
 {
   "name": "scheduler",
   "version": "1.0.0",
-  "description": "A program for easier sharing calendars without showing important info","
+  "description": "A program for easier sharing calendars without showing important info",
   "author": "Nille",
   "engines": {
     "node": "6.9.3"
@@ -29,13 +29,15 @@
     "passport-google-oauth": "^1.0.0",
     "sequelize": "^4.15.2"
   },
-  "devDependencies": {
-    "nodemon": "^1.12.1"
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/mars/heroku-cra-node.git"
+    "url": "git+https://github.com/mars/heroku-cra-node.git"
   },
   "license": "MIT",
-  "devDependencies": {}
+  "bugs": {
+    "url": "https://github.com/mars/heroku-cra-node/issues"
+  },
+  "homepage": "https://github.com/mars/heroku-cra-node#readme",
+  "main": "index.js"
 }
