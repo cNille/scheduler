@@ -42,8 +42,8 @@ function generate_token(length){
 // A strategy requires a `verify` function, which accepts in this case
 // accessToken, refreshToken and google profile.
 passport.use(new GoogleStrategy({
-    clientID: conf.google.client_id,
-    clientSecret: conf.google.client_secret,
+    clientID: process.env.CLIENT_ID || conf.google.client_id,
+    clientSecret: process.env.CLIENT_SECRET || conf.google.client_secret,
     callbackURL: process.env.GCALLBACK_URL || conf.google.callback_url,
   },
   function(accessToken, refreshToken, profile, done) {
