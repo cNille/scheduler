@@ -72,6 +72,7 @@ class Day extends Component {
   render() {
     const date = this.props.date
     const datestr = date ? date.getDate() + '/' + (date.getMonth() + 1) : 'NaN'
+    const daystring = date.toLocaleString('en-us', {  weekday: 'long' });
     const currentTime = this.renderCurrentTime() 
 
     let timeblocks = []
@@ -90,7 +91,7 @@ class Day extends Component {
 
     return (
       <div className="Day">
-        <span className="title">{datestr}</span>
+        <span className="title">{datestr} {daystring}</span>
         {dayhours}
         {timeblocks}
         {currentTime}
