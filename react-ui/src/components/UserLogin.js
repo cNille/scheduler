@@ -51,7 +51,7 @@ class UserLogin extends React.Component {
     
     const msg = user ? 
       <div>
-        <span>Logged in as: {user.firstName + ' ' + user.lastName}</span>
+        <span className="loginname"> {user.firstName + ' ' + user.lastName}</span>
         <br />
         <a>
           <button
@@ -73,4 +73,4 @@ class UserLogin extends React.Component {
   }
 }
 
-export default UserLogin;
+export default UserLogin

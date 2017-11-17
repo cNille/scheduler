@@ -22,10 +22,13 @@ class Day extends Component {
   }
 
   renderTimeBlock(startDate, endDate, idx, passedTime){
+    let start = '' + startDate.getHours() + ':' + startDate.getMinutes()
+    let end = '' + endDate.getHours() + ':' + endDate.getMinutes()
+
     let endTime = endDate.getHours() * 60 + endDate.getMinutes() - 8 * 60
     let startTime = startDate.getHours() * 60 + startDate.getMinutes() - 8 * 60
     let topOffset = this.state.height * ( startTime / (16 * 60) ) + 23
-    let height = this.state.height * ( endTime / (16 * 60) ) - topOffset
+    let height = this.state.height * ( endTime / (16 * 60) ) - topOffset + 23
     let color = passedTime ? '#aaa' : '#c94e50'
     let bordercolor = passedTime ? '#333' : '#992e40'
     let opacity = passedTime ? '0.7' : '1.0'
@@ -41,6 +44,9 @@ class Day extends Component {
         key={idx}
         className="currentTime"
         style={style}>
+        <span className="time">
+          {start} - {end}
+        </span>
       </div>
     )
   }

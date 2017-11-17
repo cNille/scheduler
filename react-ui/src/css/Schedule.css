@@ -59,3 +59,21 @@
   border-bottom: 1px solid #333;
   box-sizing: content-box;
 }
+
+.week .currentTime .time{
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  background-color: rgba(50,50,50,0.5);
+  padding: 10px 15px;
+  border-radius: 3px;
+  z-index: 999;
+  color: white;
+  opacity: 0.0;
+  display: none;
+  transition: 0.3s ease-in all;
+}
+.week .currentTime:hover .time{
+  display: block;
+  opacity: 1.0;
+}

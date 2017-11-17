@@ -110,6 +110,13 @@ function synkUser(userId){
 }
 
 function mergeTimeblocks(user, events){
+  //console.log(events);
+
+  // Filter out all transparent events. Aka those were the event doesnt
+  // make the user "busy"
+  events = events.filter(e => {
+    return e.transparency !== 'transparent'
+  })
 
   var timeblocks = [];
 
