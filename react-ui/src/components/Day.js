@@ -21,9 +21,16 @@ class Day extends Component {
     this.setState({height: height - 23})
   }
 
+  // Pads a integer with zeros to the left until width is satisfied
+  pad(n, width, z) {
+    z = z || '0';
+    n = n + '';
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+  }
+
   renderTimeBlock(startDate, endDate, idx, passedTime){
-    let start = '' + startDate.getHours() + ':' + startDate.getMinutes()
-    let end = '' + endDate.getHours() + ':' + endDate.getMinutes()
+    let start = '' + startDate.getHours() + ':' + this.pad(startDate.getMinutes(), 2)
+    let end = '' + endDate.getHours() + ':' + this.pad(endDate.getMinutes(), 2)
 
     let endTime = endDate.getHours() * 60 + endDate.getMinutes() - 8 * 60
     let startTime = startDate.getHours() * 60 + startDate.getMinutes() - 8 * 60
